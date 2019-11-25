@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
         rotatePlayer();
+        Vector3 forward = transform.TransformDirection(Vector3.up) * 10;
+        Debug.DrawRay(transform.position, forward, Color.green);
 
     }
     private void FixedUpdate()
@@ -33,25 +35,11 @@ public class PlayerController : MonoBehaviour
 
     private void rotatePlayer()
     {
-        if (Input.GetKeyDown("w"))
-        {
-            //Vector2 direction = transform
-        }
-        if (Input.GetKeyDown("a"))
-        {
-
-        }
-        if (Input.GetKeyDown("s"))
-        {
-
-        }
-        if (Input.GetKeyDown("d"))
-        {
-
-        }
-        //Vector2 direction = transform.forward - transform.position;
-        //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        //Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        //transform.localRotation = Quaternion.Slerp(transform.localRotation, rotation, rotationSpeed * Time.deltaTime);
+        
+       
+        Vector2 direction = transform.forward - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        transform.localRotation = Quaternion.Slerp(transform.localRotation, rotation, rotationSpeed * Time.deltaTime);
     }
 }
