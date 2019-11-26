@@ -5,8 +5,11 @@ using UnityEngine;
 public class KnifeLogic : MonoBehaviour
 {
     public float Speed = 5.0f;
+    public bool MoveUp = false;
+
     private Vector2 parentPosition;
 
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -16,13 +19,26 @@ public class KnifeLogic : MonoBehaviour
 
     public void Autodestroy()
     {
-       // Destroy(transform.parent.gameObject);
+        Destroy(transform.parent.gameObject);
     }
+
+    public void Movement()
+    {
+        if (MoveUp)
+        {
+            parentPosition.y = parentPosition.y - Speed;
+            transform.parent.transform.position = parentPosition;
+        }
+        else
+        {
+            parentPosition.y = parentPosition.y + Speed;
+            transform.parent.transform.position = parentPosition;
+        }
+    } 
 
     // Update is called once per frame
     void Update()
     {
-        parentPosition.y = parentPosition.y - Speed;
-        transform.parent.transform.position = parentPosition;
+        Movement();
     }
 }

@@ -9,13 +9,15 @@ public class KnifeSpawner : MonoBehaviour
     public float Rate = 0.1f;
     public float Speed = 5.0f;
     public bool NegativeX = false;
-    public bool MakeItRain = false;
+    public bool GoUp = false;
+
     public GameObject Knife;
+
+    private float nextActionTime = 0.0f;
 
     // Start is called before the first frame update
     void Start()
     {
-
 
     }
 
@@ -38,13 +40,28 @@ public class KnifeSpawner : MonoBehaviour
         transform.parent.transform.position = _newPosition;
     }
 
-    // Update is called once per frame
+
+
     void Update()
     {
-        if (MakeItRain)
-        {
-            Instantiate(Knife, transform.parent.transform.position, transform.parent.transform.rotation);
-        }
         MovementX();
+        if (Time.time > nextActionTime)
+        {
+            nextActionTime += Rate;
+            GameObject knife = Instantiate(Knife, transform.parent.position, transform.parent.rotation);
+            if (!GoUp)
+            {
+                knife.transform.GetChild(0).GetComponent<KnifeLogic>().MoveUp = true;
+            }
+            else
+            {
+                knife.transform.GetChild(0).GetComponent<KnifeLogic>().MoveUp = false;
+            }
+
+        }
+        if (Time.time > 5)
+        {
+            Destroy(transform.parent.gameObject);
+        }
     }
 }
