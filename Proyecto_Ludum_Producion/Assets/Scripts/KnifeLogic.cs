@@ -34,7 +34,15 @@ public class KnifeLogic : MonoBehaviour
             parentPosition.y = parentPosition.y + Speed;
             transform.parent.transform.position = parentPosition;
         }
-    } 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision) //trigger to kill Player
+    {
+        if (collision.tag == "Player")
+        {
+            Debug.Log("PLAYER KILLED");
+        }
+    }
 
     // Update is called once per frame
     void Update()

@@ -18,7 +18,10 @@ public class LaserBeamScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision) //trigger to kill Player
     {
-        
+        if (collision.tag == "Player")
+        {
+            Debug.Log("PLAYER KILLED");
+        }
     }
 
     void Update()
