@@ -6,7 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     //Private vars
     private Rigidbody2D rb2d;
-    Vector2 movement;
+    private Vector2 movement;
+
     //Public vars
     public float speed;
     public float rotationSpeed;
@@ -15,6 +16,7 @@ public class PlayerController : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         transform.localScale = new Vector3(0.5f, 0.5f, 0.0f);
+
     }
 
     // Update is called once per frame
@@ -22,24 +24,12 @@ public class PlayerController : MonoBehaviour
     {
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
-        rotatePlayer();
-        Vector3 forward = transform.TransformDirection(Vector3.up) * 10;
-        Debug.DrawRay(transform.position, forward, Color.green);
+
+        Debug.Log(movement);
 
     }
     private void FixedUpdate()
     {
-
         rb2d.MovePosition(rb2d.position + movement * speed * Time.fixedDeltaTime);
-    }
-
-    private void rotatePlayer()
-    {
-        
-       
-        Vector2 direction = transform.forward - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.localRotation = Quaternion.Slerp(transform.localRotation, rotation, rotationSpeed * Time.deltaTime);
     }
 }
