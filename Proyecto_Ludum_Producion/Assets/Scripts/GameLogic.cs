@@ -10,25 +10,31 @@ public class GameLogic : MonoBehaviour
     public EventUI EventUI;
     public Text Description;
     public float EventTime = 5f;
+    public PlayerController PlayerController;
+    //public Text GlobalTime;
 
     [SerializeField]
     private ScriptableEvent _currentTrap;
     [SerializeField]
     private List<GameObject> _activeTraps;
-
     [SerializeField]
     private bool _gameFreezed;
-
     [SerializeField]
     private float _globalTimer;
     [SerializeField]
     private float _newEventTimer;
+    [SerializeField]
+    private float _scoreTimer;
 
 
     private void Start()
     {
         _gameFreezed = true;
         _activeTraps = new List<GameObject>();
+
+        _globalTimer = 0f;
+        _newEventTimer = 0f;
+        _scoreTimer = 0f;
 
         FreezeGame();
     }
@@ -40,26 +46,26 @@ public class GameLogic : MonoBehaviour
             _globalTimer += Time.deltaTime;
             _newEventTimer += Time.deltaTime;
 
-            if(_newEventTimer >= 5f)
+            if (_newEventTimer >= 5f)
             {
                 FreezeGame();
                 _newEventTimer = 0f;
             }
-        }
-    }
 
-    private void FreezePlayer(bool _freezed)
-    {
-        //Block movement
+            if(_globalTimer - _scoreTimer > 1f && !PlayerController.death)
+            {
+                //Reset timer and add score
+                _scoreTimer = _globalTimer;
+                ScoreManager.AddScore();
+            }
+        }
     }
 
     private void FreezeGame()
     {
         Debug.Log("game freezed");
         _gameFreezed = true;
-        FreezePlayer(true);
-
-        //Debug.Log("Game freezed");
+        PlayerController.freezed = true;
 
         FinishEvent();
 
@@ -67,17 +73,12 @@ public class GameLogic : MonoBehaviour
 
         //Activate text animation (show text)
         AnimIn();
-        ////When animation finishes, call UnfreezeGame()
-        //UnfreezeGame();
-
     }
 
     public void UnfreezeGame()
     {
         _gameFreezed = false;
-        FreezePlayer(false);
-
-        //Debug.Log("Game unfreezed");
+        PlayerController.freezed = false;
 
         StartEvent();
     }
@@ -96,17 +97,23 @@ public class GameLogic : MonoBehaviour
         {
             GameObject newTrap = Instantiate(trap.TrapPrefab, Vector3.zero, Quaternion.identity);
             //Setup trap configuration
-            switch (_currentTrap.TrapType)
+            switch (trap.TrapType)
             {
                 case TrapType.LASER:
                     newTrap.GetComponent<TrapLaserScript>().InitializeTrap(trap.NumberOfLasers, trap.Speed, trap.MoveX, trap.NegativeX, trap.MoveY, trap.NegativeY);
-                    newTrap.transform.position = trap.InitialPosition;
                     break;
 
-                case TrapType.PINCHOS:
+                case TrapType.KNIFES:
+                    newTrap.GetComponent<KnifeSpawner>().InitializeTrap(trap.Rate, trap.Speed, trap.NegativeX, trap.GoUp);
+                    break;
+
+                case TrapType.SPIKES:
                     //To do
                     break;
             }
+
+            newTrap.transform.position = trap.InitialPosition;
+            newTrap.transform.localEulerAngles = trap.InitialRotation;
 
             _activeTraps.Add(newTrap);
         }

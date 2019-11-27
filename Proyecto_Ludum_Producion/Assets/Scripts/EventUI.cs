@@ -10,20 +10,20 @@ public class EventUI : MonoBehaviour
     {
         GameLogic.UnfreezeGame();
 
-        Debug.Log("game unfreezed");
+        //Debug.Log("game unfreezed");
     }
 
     public void AnimationIn()
     {
         GetComponent<Animator>().SetTrigger("DescIn");
 
-        Debug.Log("text appears");
+        //Debug.Log("text appears");
     }
 
     public void AnimationOut()
     {
         GetComponent<Animator>().SetTrigger("DescOut");
 
-        Debug.Log("text disappears");
+        //Debug.Log("text disappears");
     }
 }

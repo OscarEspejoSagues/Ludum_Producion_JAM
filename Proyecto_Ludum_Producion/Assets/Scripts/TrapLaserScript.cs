@@ -17,6 +17,7 @@ public class TrapLaserScript : MonoBehaviour
 
 
     private int state = 0;
+    private float movementTimer = 2.7f;   //It doesn't start at 0f because it needs an adjustment
 
     void Start()
     {
@@ -50,11 +51,11 @@ public class TrapLaserScript : MonoBehaviour
         Vector2 _newPosition = new Vector2(transform.position.x, transform.position.y);
         if (NegativeX)
         {
-            _newPosition.x -= Mathf.Sin(Time.time) * Time.deltaTime * Speed;
+            _newPosition.x -= Mathf.Sin(movementTimer) * Time.deltaTime * Speed;
         }
         else
         {
-            _newPosition.x += Mathf.Sin(Time.time) * Time.deltaTime * Speed;
+            _newPosition.x += Mathf.Sin(movementTimer) * Time.deltaTime * Speed;
         }
         transform.position = _newPosition;
     }
@@ -64,11 +65,11 @@ public class TrapLaserScript : MonoBehaviour
         Vector2 _newPosition = new Vector2(transform.position.x, transform.position.y);
         if (NegativeY)
         {
-            _newPosition.y -= Mathf.Sin(Time.time) * Time.deltaTime * Speed;
+            _newPosition.y -= Mathf.Sin(movementTimer) * Time.deltaTime * Speed;
         }
         else
         {
-            _newPosition.y += Mathf.Sin(Time.time) * Time.deltaTime * Speed;
+            _newPosition.y += Mathf.Sin(movementTimer) * Time.deltaTime * Speed;
         }
 
         transform.position = _newPosition;
@@ -77,6 +78,8 @@ public class TrapLaserScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        movementTimer += Time.deltaTime;
+
         switch (state)
         {
             case 0: //appear

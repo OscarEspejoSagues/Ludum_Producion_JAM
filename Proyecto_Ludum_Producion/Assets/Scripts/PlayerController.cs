@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float rotationSpeed;
     public bool death = false;
+    public bool freezed = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (!death)
+        if (!death && !freezed)
         {
             movement.x = Input.GetAxis("Horizontal");
             movement.y = Input.GetAxis("Vertical");
