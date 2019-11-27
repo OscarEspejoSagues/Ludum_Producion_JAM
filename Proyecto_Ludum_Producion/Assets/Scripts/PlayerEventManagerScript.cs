@@ -10,6 +10,11 @@ public class PlayerEventManagerScript : MonoBehaviour
     public float smoothSpeed = 2.0f;
     public float minOrtho = 1.0f;
     public float maxOrtho = 5.0f;
+    public bool zoomIn = false;
+
+    public Transform _camera;
+    public Vector3 offset;
+
     void Start()
     {
         targetOrtho = Camera.main.orthographicSize;
@@ -19,9 +24,16 @@ public class PlayerEventManagerScript : MonoBehaviour
     void Update()
     {
         float scroll = Input.GetAxis("Mouse ScrollWheel");
-        if (scroll != 0.0f)
+        if (zoomIn)
         {
-            targetOrtho -= scroll * zoomSpeed;
+            targetOrtho -=  zoomSpeed;
+            targetOrtho = Mathf.Clamp(targetOrtho, minOrtho, maxOrtho);
+            _camera.position = new Vector3(transform.position.x + offset.x, transform.position.y + offset.y, _camera.position.z);
+
+        }
+        else if(!zoomIn)
+        {
+            targetOrtho +=  zoomSpeed;
             targetOrtho = Mathf.Clamp(targetOrtho, minOrtho, maxOrtho);
         }
 

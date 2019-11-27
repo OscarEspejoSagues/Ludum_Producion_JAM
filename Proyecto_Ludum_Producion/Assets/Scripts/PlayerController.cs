@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour
 
     //Public vars
     public float speed;
-    public float rotationSpeed;
     // Start is called before the first frame update
     void Start()
     {

@@ -314,5 +314,15 @@ PrefabInstance:
       propertyPath: smoothSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 4316616390012702701, guid: 5928f42ae6f7ec5488da8d7beff73435,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 778709490}
+    - target: {fileID: 4316616390012702701, guid: 5928f42ae6f7ec5488da8d7beff73435,
+        type: 3}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 778709490}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5928f42ae6f7ec5488da8d7beff73435, type: 3}
