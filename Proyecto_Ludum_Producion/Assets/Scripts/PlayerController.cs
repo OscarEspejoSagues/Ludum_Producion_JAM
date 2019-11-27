@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     //Public vars
     public float speed;
     public float rotationSpeed;
+    public bool death = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +23,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        movement.x = Input.GetAxis("Horizontal");
-        movement.y = Input.GetAxis("Vertical");
-
-        Debug.Log(movement);
-
+        if (!death)
+        {
+            movement.x = Input.GetAxis("Horizontal");
+            movement.y = Input.GetAxis("Vertical");
+        }
     }
     private void FixedUpdate()
     {
