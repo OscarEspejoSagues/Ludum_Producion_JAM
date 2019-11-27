@@ -204,6 +204,8 @@ MonoBehaviour:
   smoothSpeed: 10
   minOrtho: 1
   maxOrtho: 5
-  zoomIn: 0
+  enableEvent: 0
   _camera: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
+  debuffSpeed: 5
+  buffSpeed: 20
