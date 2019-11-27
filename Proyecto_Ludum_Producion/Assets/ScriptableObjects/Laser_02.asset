@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72860462f1194be40972b9527b05c9a9, type: 3}
+  m_Name: Laser_02
+  m_EditorClassIdentifier: 
+  TrapType: 0
+  Description: Ready for your eye surgery?
+  LaserTrapPrefab: {fileID: 7636711211035600704, guid: 4d47ebb2b1572b94ba7dac860686e029,
+    type: 3}
+  LaserTraps:
+  - NumberOfLasers: 10
+    myLaserPrefab: {fileID: 0}
+    Speed: 5
+    MoveX: 0
+    NegativeX: 1
+    MoveY: 0
+    NegativeY: 0
+    InitialPosition: {x: 0, y: 0}
+  - NumberOfLasers: 10
+    myLaserPrefab: {fileID: 0}
+    Speed: 4
+    MoveX: 0
+    NegativeX: 1
+    MoveY: 0
+    NegativeY: 0
+    InitialPosition: {x: 0, y: 0}
+  PinchosTrapPrefab: {fileID: 0}
+  PinchosTraps: []

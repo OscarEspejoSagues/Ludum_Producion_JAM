@@ -9,36 +9,36 @@ public class TrapLaserScript : MonoBehaviour
     public int NumberOfLasers;
     public GameObject myLaserPrefab;
 
-    public float Speed = 5.0f;
-    public bool MoveX = false;
-    public bool NegativeX = false;
-    public bool MoveY = false;
-    public bool NegativeY = false;
+    public float Speed;
+    public bool MoveX;
+    public bool NegativeX;
+    public bool MoveY;
+    public bool NegativeY;
 
 
     private int state = 0;
 
     void Start()
     {
- 
+
     }
 
     public void InstanceLasers()
     {
         GameObject lastLaser = null;
         GameObject aux = null;
-        for (int i = 0; i<=NumberOfLasers; i++)
+        for (int i = 0; i <= NumberOfLasers; i++)
         {
             if (aux == null)
             {
                 lastLaser = Instantiate(myLaserPrefab, transform.position, transform.rotation);
-                lastLaser.transform.SetParent(transform.parent.transform);
+                lastLaser.transform.SetParent(transform);
                 aux = lastLaser;
             }
             else
             {
                 lastLaser = Instantiate(myLaserPrefab, aux.transform.GetChild(2).position, aux.transform.GetChild(2).rotation);
-                lastLaser.transform.SetParent(transform.parent.transform);
+                lastLaser.transform.SetParent(transform);
                 aux = lastLaser;
             }
         }
@@ -47,20 +47,21 @@ public class TrapLaserScript : MonoBehaviour
 
     public void MovementX()
     {
-        Vector2 _newPosition = new Vector2(transform.parent.transform.position.x, transform.parent.transform.position.y);
+        Vector2 _newPosition = new Vector2(transform.position.x, transform.position.y);
         if (NegativeX)
         {
             _newPosition.x -= Mathf.Sin(Time.time) * Time.deltaTime * Speed;
         }
-        else{
+        else
+        {
             _newPosition.x += Mathf.Sin(Time.time) * Time.deltaTime * Speed;
         }
-        transform.parent.transform.position = _newPosition;
+        transform.position = _newPosition;
     }
 
     public void MovementY()
     {
-        Vector2 _newPosition = new Vector2(transform.parent.transform.position.x, transform.parent.transform.position.y);
+        Vector2 _newPosition = new Vector2(transform.position.x, transform.position.y);
         if (NegativeY)
         {
             _newPosition.y -= Mathf.Sin(Time.time) * Time.deltaTime * Speed;
@@ -70,7 +71,7 @@ public class TrapLaserScript : MonoBehaviour
             _newPosition.y += Mathf.Sin(Time.time) * Time.deltaTime * Speed;
         }
 
-        transform.parent.transform.position = _newPosition;
+        transform.position = _newPosition;
     }
 
     // Update is called once per frame
@@ -95,5 +96,16 @@ public class TrapLaserScript : MonoBehaviour
                 }
                 break;
         }
+    }
+
+    public void InitializeTrap(int lasersNum, float speed, bool moveX, bool negativeX, bool moveY, bool negativeY)
+    {
+        NumberOfLasers = lasersNum;
+
+        Speed = speed;
+        MoveX = moveX;
+        NegativeX = negativeX;
+        MoveY = moveY;
+        NegativeY = negativeY;
     }
 }
