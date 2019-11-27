@@ -20,7 +20,7 @@ public class LaserBeamScript : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            Debug.Log("PLAYER KILLED");
+            collision.GetComponent<PlayerDeath>().Die = true;
         }
     }
 
