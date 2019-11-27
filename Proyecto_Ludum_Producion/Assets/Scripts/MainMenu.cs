@@ -23,6 +23,4 @@ public class MainMenu : MonoBehaviour
         //SceneManager.LoadScene("Tutorial");
         Debug.Log("TUTORIAL");
     }
-
-
 }
