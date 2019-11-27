@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum TrapType { LASER, PINCHOS};
+public enum TrapType { LASER, KNIFES, SPIKES};
 
 [CreateAssetMenu(menuName = "ScriptableObjects/Events", order = 1)]
 public class ScriptableEvent : ScriptableObject
 {
     [Header("General")]
-    public TrapType TrapType;
     public string Description;
     public List<TrapEvent> Traps;
 
@@ -24,37 +23,46 @@ public class ScriptableEvent : ScriptableObject
 [System.Serializable]
 public class TrapEvent
 {
-    public int NumberOfLasers = 10;
+    [Header("Shared")]
+    public TrapType TrapType;
     public GameObject TrapPrefab;
-
     public float Speed = 5.0f;
-    public bool MoveX = false;
     public bool NegativeX = false;
+    public Vector2 InitialPosition;
+    public Vector3 InitialRotation;
+
+    [Header("Laser")]
+    public int NumberOfLasers = 10;
+    public bool MoveX = false;
     public bool MoveY = false;
     public bool NegativeY = false;
 
-    public Vector2 InitialPosition;
-    public Vector3 InitialRotation;
+    [Header("Cuchillas")]
+    public float Rate;
+    public bool GoUp = false;
+
+    //[Header("Pinchos")]
+
 }
 
-[System.Serializable]
-public class LaserEvent:TrapEvent
-{
-    //public int NumberOfLasers = 10;
-    //public GameObject myLaserPrefab;
+//[System.Serializable]
+//public class LaserEvent:TrapEvent
+//{
+//    //public int NumberOfLasers = 10;
+//    //public GameObject myLaserPrefab;
 
-    //public float Speed = 5.0f;
-    //public bool MoveX = false;
-    //public bool NegativeX = false;
-    //public bool MoveY = false;
-    //public bool NegativeY = false;
+//    //public float Speed = 5.0f;
+//    //public bool MoveX = false;
+//    //public bool NegativeX = false;
+//    //public bool MoveY = false;
+//    //public bool NegativeY = false;
 
-    //public Vector2 InitialPosition;
-}
+//    //public Vector2 InitialPosition;
+//}
 
 
-[System.Serializable]
-public class PinchosEvent:TrapEvent
-{
-    //TODO
-}
+//[System.Serializable]
+//public class PinchosEvent:TrapEvent
+//{
+//    //TODO
+//}

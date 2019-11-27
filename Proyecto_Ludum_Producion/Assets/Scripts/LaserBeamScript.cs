@@ -10,7 +10,7 @@ public class LaserBeamScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("Autodestroy", 5.0f,1);
+        InvokeRepeating("Autodestroy", TimeAlive,1);
     }
     public void Autodestroy()
     {

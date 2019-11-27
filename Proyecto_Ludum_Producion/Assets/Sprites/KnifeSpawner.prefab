@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 691935584621287501}
-  - component: {fileID: 691935584621287498}
   m_Layer: 0
   m_Name: Logic
   m_TagString: Untagged
@@ -31,24 +30,6 @@ Transform:
   m_Father: {fileID: 691935585731417268}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &691935584621287498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 691935584621287500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12d5841bd3f817a46b545011b85cb7f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NumberOfKnifes: 10
-  Rate: 0.6
-  Speed: 5
-  NegativeX: 0
-  GoUp: 0
-  Knife: {fileID: 1949526970984830719, guid: f1bf284ec3b4cf04bb026c675530e8c9, type: 3}
 --- !u!1 &691935585731417271
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,6 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 691935585731417268}
+  - component: {fileID: 658965955}
   m_Layer: 0
   m_Name: KnifeSpawner
   m_TagString: Untagged
@@ -81,6 +63,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &658965955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691935585731417271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12d5841bd3f817a46b545011b85cb7f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rate: 0.6
+  Speed: 5
+  NegativeX: 0
+  GoUp: 0
+  Knife: {fileID: 1949526970984830719, guid: f1bf284ec3b4cf04bb026c675530e8c9, type: 3}
 --- !u!1 &691935585903036793
 GameObject:
   m_ObjectHideFlags: 0
