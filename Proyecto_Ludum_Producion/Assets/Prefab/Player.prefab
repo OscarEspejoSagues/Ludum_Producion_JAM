@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 697140749361685306}
   - component: {fileID: -7530086427657536728}
   - component: {fileID: 656172587891718782}
-  - component: {fileID: 3484480383211148467}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -156,6 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   rotationSpeed: 5
+  death: 0
 --- !u!1 &4019874000868754209
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,8 +199,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcf704e5e0cc3654ca109027039f821d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoomSpeed: 1
+  zoomSpeed: 15
   targetOrtho: 0
-  smoothSpeed: 2
+  smoothSpeed: 10
   minOrtho: 1
-  maxOrtho: 20
+  maxOrtho: 5
+  zoomIn: 0
+  _camera: {fileID: 0}
+  offset: {x: 0, y: 0, z: 0}
