@@ -5,28 +5,41 @@ using UnityEngine.UI;
 
 public class GameLogic : MonoBehaviour
 {
+    [Header("References")]
     public ScoreManager ScoreManager;
-    public List<ScriptableEvent> PossibleTraps;
     public EventUI EventUI;
     public Text Description;
-    public float EventTime = 5f;
     public PlayerController PlayerController;
+
+    [Header("Levels")]
+    public float LevelThreshold = 30f;
+    public int MaxLevel = 3;
+    public List<ScriptableEvent> Level1Traps;
+    public List<ScriptableEvent> Level2Traps;
+    public List<ScriptableEvent> Level3Traps;
+
+    [Header("Events")]
+    public float EventTime = 5f;
     //public Text GlobalTime;
 
-    [SerializeField]
+    //[SerializeField]
     private ScriptableEvent _currentTrap;
-    [SerializeField]
+    //[SerializeField]
     private List<GameObject> _activeTraps;
-    [SerializeField]
+    //[SerializeField]
     private bool _gameFreezed;
-    [SerializeField]
+    //[SerializeField]
     private float _globalTimer;
-    [SerializeField]
+    //[SerializeField]
     private float _newEventTimer;
-    [SerializeField]
+    //[SerializeField]
     private float _scoreTimer;
+    [SerializeField]
+    private float _levelTimer;
+    [SerializeField]
+    private int _currentLevel;
 
-
+    //Start
     private void Start()
     {
         _gameFreezed = true;
@@ -35,16 +48,21 @@ public class GameLogic : MonoBehaviour
         _globalTimer = 0f;
         _newEventTimer = 0f;
         _scoreTimer = 0f;
+        _levelTimer = 0f;
+
+        _currentLevel = 1;
 
         FreezeGame();
     }
 
+    //Update
     private void Update()
     {
         if (!_gameFreezed)
         {
             _globalTimer += Time.deltaTime;
             _newEventTimer += Time.deltaTime;
+            _levelTimer += Time.deltaTime;
 
             if (_newEventTimer >= 5f)
             {
@@ -52,15 +70,22 @@ public class GameLogic : MonoBehaviour
                 _newEventTimer = 0f;
             }
 
-            if(_globalTimer - _scoreTimer > 1f && !PlayerController.death)
+            if (_globalTimer - _scoreTimer > 1f && !PlayerController.death)
             {
                 //Reset timer and add score
                 _scoreTimer = _globalTimer;
                 ScoreManager.AddScore();
             }
+
+            if (_levelTimer >= LevelThreshold && _currentLevel < MaxLevel)
+            {
+                _currentLevel++;
+                _levelTimer = 0;
+            }
         }
     }
 
+    //Freezes game
     private void FreezeGame()
     {
         Debug.Log("game freezed");
@@ -75,6 +100,7 @@ public class GameLogic : MonoBehaviour
         AnimIn();
     }
 
+    //Unfreezes game
     public void UnfreezeGame()
     {
         _gameFreezed = false;
@@ -83,13 +109,31 @@ public class GameLogic : MonoBehaviour
         StartEvent();
     }
 
+    //Selects random event (trap) based on current level
     private void InitializeEvent()
     {
         //Initialize event
-        int rand = Random.Range(0, PossibleTraps.Count);
-        _currentTrap = PossibleTraps[rand];
+        int rand = 0;
+        switch (_currentLevel)
+        {
+            case 1:
+                rand = Random.Range(0, Level1Traps.Count);
+                _currentTrap = Level1Traps[rand];
+                break;
+
+            case 2:
+                rand = Random.Range(0, Level2Traps.Count);
+                _currentTrap = Level2Traps[rand];
+                break;
+
+            case 3:
+                rand = Random.Range(0, Level3Traps.Count);
+                _currentTrap = Level3Traps[rand];
+                break;
+        }
     }
 
+    //Start event. Instantiates traps
     private void StartEvent()
     {
         //Spawn all traps
@@ -136,6 +180,7 @@ public class GameLogic : MonoBehaviour
         ScoreManager.SaveScore();
     }
 
+    //Start description animation
     private void AnimIn()
     {
         Description.text = _currentTrap.Description;
