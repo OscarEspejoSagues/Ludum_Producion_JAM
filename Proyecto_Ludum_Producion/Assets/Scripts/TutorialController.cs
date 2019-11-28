@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TutorialController : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class TutorialController : MonoBehaviour
     public SpriteRenderer TextImage;
     public Sprite[] TextToShow;
     public float Rate = 5.0f;
+    public Canvas Button;
 
     private int CurrentText = 0;
     private float nextActionTime = 5.0f;
@@ -43,6 +45,9 @@ public class TutorialController : MonoBehaviour
                     break;
                 case 6:
                     DeathTrap.SetActive(true);
+                    Button.gameObject.SetActive(true);
+                    break;
+                case 7:
                     break;
             }
         }
