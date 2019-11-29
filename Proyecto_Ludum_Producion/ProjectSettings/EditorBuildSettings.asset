@@ -6,12 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MartiScene.unity
-    guid: 8004a40548ef3004cafd53f925d421c4
+    path: Assets/Scenes/MainMenu.unity
+    guid: 7449bb61639787d4daaef51713f0dc22
   - enabled: 1
-    path: Assets/Scenes/OscarScene.unity
-    guid: e4ca1a7b5164a6c4597b87097c1a3876
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/GameScene.unity
+    guid: ad9cfd6971e633e438eb47525a23d9ef
   m_configObjects: {}
