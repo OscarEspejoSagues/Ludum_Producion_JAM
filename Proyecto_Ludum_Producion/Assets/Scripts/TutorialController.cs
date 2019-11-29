@@ -10,7 +10,8 @@ public class TutorialController : MonoBehaviour
     public SpriteRenderer TextImage;
     public Sprite[] TextToShow;
     public float Rate = 5.0f;
-    public Canvas Button;
+    public GameObject PlayButton;
+    public PlayerController PlayerController;
 
     private int CurrentText = 0;
     private float nextActionTime = 5.0f;
@@ -40,19 +41,26 @@ public class TutorialController : MonoBehaviour
             switch (CurrentText)
             {
                 case 1:
-                    transform.parent.position = new Vector3(8.0f, -1.12f, 1.0f);
+                    //transform.parent.position = new Vector3(8.0f, -1.12f, 1.0f);
+                    //Arrow.transform.position = Vector3.zero;
+                    Arrow.GetComponent<Animator>().SetTrigger("Animation2");
                     break;
                 case 2:
                     Arrow.SetActive(false);
-                    transform.parent.position = new Vector3(0.77F, -1.17f, 1.0f);
+                    //transform.parent.position = new Vector3(0.77F, -1.17f, 1.0f);
                     break;
                 case 6:
                     DeathTrap.SetActive(true);
-                    Button.gameObject.SetActive(true);
+                    //PlayButton.SetActive(true);
                     break;
                 case 7:
                     break;
             }
+        }
+
+        if (PlayerController.death)
+        {
+            PlayButton.SetActive(true);
         }
     }
 }
