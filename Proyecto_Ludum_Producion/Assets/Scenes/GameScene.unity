@@ -694,7 +694,7 @@ PrefabInstance:
     - target: {fileID: 2045828893041822871, guid: a5ee3f48fd724da489326084fe2c2aa5,
         type: 3}
       propertyPath: LevelThreshold
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2045828893041822871, guid: a5ee3f48fd724da489326084fe2c2aa5,
         type: 3}
@@ -940,7 +940,7 @@ PrefabInstance:
     - target: {fileID: 3308860317317214072, guid: c14c74a53ab18c645a1e57d14657b598,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 167.8
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 3308860316403927161, guid: c14c74a53ab18c645a1e57d14657b598,
         type: 3}
@@ -1026,15 +1026,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blur
       objectReference: {fileID: 0}
+    - target: {fileID: 7473171567518663956, guid: 59591a7728e09324fa20b2a9e2ddd04e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7473171567601052615, guid: 59591a7728e09324fa20b2a9e2ddd04e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.6
+      value: -0.148
       objectReference: {fileID: 0}
     - target: {fileID: 7473171567601052615, guid: 59591a7728e09324fa20b2a9e2ddd04e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: -0.021
       objectReference: {fileID: 0}
     - target: {fileID: 7473171567601052615, guid: 59591a7728e09324fa20b2a9e2ddd04e,
         type: 3}
