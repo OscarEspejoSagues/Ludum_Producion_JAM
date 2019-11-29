@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum events { NONE, ZOOMIN, SPEEDDEBUFF, SPEEDBUFF, BLUR, FOW};
+
 public class PlayerEventManagerScript : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -12,7 +14,8 @@ public class PlayerEventManagerScript : MonoBehaviour
     public float minOrtho = 1.0f;
     public float maxOrtho = 5.0f;
     public bool enableEvent = false;
-    public enum events {ZOOMIN,SPEEDDEBUFF,SPEEDBUFF };
+
+    public events CurrentEvent = events.NONE;
 
     public Transform _camera;
     public Vector3 offset;
@@ -20,36 +23,42 @@ public class PlayerEventManagerScript : MonoBehaviour
     public float debuffSpeed;
     public float buffSpeed;
 
+    public GameObject BlurDebuff;
+    public GameObject FOWDebuff;
+
     private float defaultSpeed;
 
 
     void Start()
     {
         targetOrtho = Camera.main.orthographicSize;
-        defaultSpeed = this.transform.parent.GetComponent<PlayerController>().speed;
+        defaultSpeed = transform.parent.GetComponent<PlayerController>().speed;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        
-        if(enableEvent)
-            eventManager(events.SPEEDBUFF);
+
+        if (enableEvent)
+            eventManager(CurrentEvent);
         else
         {
 
             targetOrtho += zoomSpeed;
             targetOrtho = Mathf.Clamp(targetOrtho, minOrtho, maxOrtho);
-            this.transform.parent.GetComponent<PlayerController>().speed = defaultSpeed;
+            transform.parent.GetComponent<PlayerController>().speed = defaultSpeed;
+
+            FOWDebuff.SetActive(false);
+            BlurDebuff.SetActive(false);
         }
         Camera.main.orthographicSize = Mathf.MoveTowards(Camera.main.orthographicSize, targetOrtho, smoothSpeed * Time.deltaTime);
 
-        
+
     }
 
     public void eventManager(events eventNumber)
     {
-       
+
         switch (eventNumber)
         {
             case events.ZOOMIN:
@@ -57,21 +66,33 @@ public class PlayerEventManagerScript : MonoBehaviour
                 targetOrtho = Mathf.Clamp(targetOrtho, minOrtho, maxOrtho);
                 _camera.position = new Vector3(transform.position.x + offset.x, transform.position.y + offset.y, _camera.position.z);
 
-                this.transform.parent.GetComponent<PlayerController>().speed = defaultSpeed;
+                transform.parent.GetComponent<PlayerController>().speed = defaultSpeed;
                 break;
+
             case events.SPEEDDEBUFF:
-                this.transform.parent.GetComponent<PlayerController>().speed = debuffSpeed;
+                transform.parent.GetComponent<PlayerController>().speed = debuffSpeed;
 
                 targetOrtho += zoomSpeed;
                 targetOrtho = Mathf.Clamp(targetOrtho, minOrtho, maxOrtho);
                 break;
+
             case events.SPEEDBUFF:
-                this.transform.parent.GetComponent<PlayerController>().speed = buffSpeed;
+                transform.parent.GetComponent<PlayerController>().speed = buffSpeed;
 
                 targetOrtho += zoomSpeed;
                 targetOrtho = Mathf.Clamp(targetOrtho, minOrtho, maxOrtho);
                 break;
 
+            case events.BLUR:
+                BlurDebuff.SetActive(true);
+                break;
+
+            case events.FOW:
+                FOWDebuff.SetActive(true);
+                break;
+
+            case events.NONE:
+                break;
         }
     }
 }

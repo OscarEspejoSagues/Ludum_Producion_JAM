@@ -9,6 +9,7 @@ public class ScriptableEvent : ScriptableObject
 {
     [Header("General")]
     public string Description;
+    public events Debuff;
     public List<TrapEvent> Traps;
 
     //[Header("Laser")]
