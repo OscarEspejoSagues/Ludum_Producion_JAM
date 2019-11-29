@@ -35,14 +35,16 @@ public class GameLogic : MonoBehaviour
     private float _newEventTimer;
     //[SerializeField]
     private float _scoreTimer;
-    [SerializeField]
+    //[SerializeField]
     private float _levelTimer;
-    [SerializeField]
+    //[SerializeField]
     private int _currentLevel;
 
     //Start
     private void Start()
     {
+        Time.timeScale = 1f;
+
         _gameFreezed = true;
         _activeTraps = new List<GameObject>();
 

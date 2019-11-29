@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     private string Game = "GameScene";
-    private string TutorialScene = "TutorialScene";
+    private string Tutorial = "TutorialScene";
     
     public void PlayGame()
     {
@@ -22,7 +22,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayTutorial()
     {
-        //SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene(Tutorial);
         //Debug.Log("TUTORIAL");
     }
 }

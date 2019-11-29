@@ -14,6 +14,7 @@ public class TutorialController : MonoBehaviour
 
     private int CurrentText = 0;
     private float nextActionTime = 5.0f;
+    private float actionTimer = 0f;
 
     private void Awake()
     {
@@ -29,7 +30,9 @@ public class TutorialController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > nextActionTime)
+        actionTimer += Time.deltaTime;
+
+        if (actionTimer > nextActionTime)
         {
             nextActionTime += Rate;
             CurrentText++;
