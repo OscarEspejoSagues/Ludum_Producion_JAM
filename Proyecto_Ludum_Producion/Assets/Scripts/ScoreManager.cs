@@ -1,7 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+
+[System.Serializable]
+public class PlayerScore
+{
+    public int BestScore;
+    public int BestTime;
+    public int BestSurvivedTraps;
+}
 
 public class ScoreManager : MonoBehaviour
 {
@@ -38,7 +47,7 @@ public class ScoreManager : MonoBehaviour
     //Save current score
     public void SaveScore()
     {
-
+        //File.WriteAllText()
     }
 
     //Get all saved scores
