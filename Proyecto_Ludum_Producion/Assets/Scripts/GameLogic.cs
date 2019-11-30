@@ -39,6 +39,8 @@ public class GameLogic : MonoBehaviour
     private float _levelTimer;
     //[SerializeField]
     private int _currentLevel;
+    //[SerializeField]
+    private int _survivedTraps;
 
     //Start
     private void Start()
@@ -55,6 +57,8 @@ public class GameLogic : MonoBehaviour
 
         _currentLevel = 1;
 
+        _survivedTraps = 0;
+
         FreezeGame();
     }
 
@@ -63,27 +67,37 @@ public class GameLogic : MonoBehaviour
     {
         if (!_gameFreezed)
         {
-            _globalTimer += Time.deltaTime;
-            _newEventTimer += Time.deltaTime;
-            _levelTimer += Time.deltaTime;
-
-            if (_newEventTimer >= 5f)
+            if (!PlayerController.death)
             {
-                FreezeGame();
-                _newEventTimer = 0f;
+                _globalTimer += Time.deltaTime;
+                _newEventTimer += Time.deltaTime;
+                _levelTimer += Time.deltaTime;
+
+                if (_newEventTimer >= 5f)
+                {
+                    FreezeGame();
+                    _newEventTimer = 0f;
+                    _survivedTraps++;
+                }
+
+                if (_globalTimer - _scoreTimer > 1f && !PlayerController.death)
+                {
+                    //Reset timer and add score
+                    _scoreTimer = _globalTimer;
+                    ScoreManager.AddScore();
+                }
+
+                if (_levelTimer >= LevelThreshold && _currentLevel < MaxLevel)
+                {
+                    _currentLevel++;
+                    _levelTimer = 0;
+                }
             }
-
-            if (_globalTimer - _scoreTimer > 1f && !PlayerController.death)
+            else if (PlayerController.death)
             {
-                //Reset timer and add score
-                _scoreTimer = _globalTimer;
-                ScoreManager.AddScore();
-            }
-
-            if (_levelTimer >= LevelThreshold && _currentLevel < MaxLevel)
-            {
-                _currentLevel++;
-                _levelTimer = 0;
+                //Save Game
+                SaveData(_survivedTraps);
+                ScoreManager.SetUpScoreScreen(_survivedTraps);
             }
         }
     }
@@ -183,10 +197,10 @@ public class GameLogic : MonoBehaviour
     }
 
     //Write score in disk
-    private void SaveScore()
+    private void SaveData(int survivedTraps)
     {
-        //Call SaveScore() in ScoreManager
-        ScoreManager.SaveScore();
+        //Call SaveData() in ScoreManager
+        ScoreManager.SaveData(survivedTraps);
     }
 
     //Start description animation

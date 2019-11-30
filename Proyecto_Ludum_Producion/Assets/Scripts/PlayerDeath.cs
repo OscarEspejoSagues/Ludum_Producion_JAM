@@ -9,6 +9,7 @@ public class PlayerDeath : MonoBehaviour
     public bool Die = false;
     public AudioSource myFx;
     public AudioClip deathFx;
+    public ScoreManager ScoreManager;
     private float volume;
 
     private Animator m_Animator;
@@ -34,15 +35,25 @@ public class PlayerDeath : MonoBehaviour
                     Time.timeScale = 0.2f;
                     state++;
                     break;
+
                 case 1:
                     m_Animator.SetBool("Die", true);
                     transform.GetComponent<PlayerController>().death = true;
                     state++;
                     break;
+
                 case 2: //Texto de muerte
 
                     break;
             }
+        }
+    }
+
+    public void ShowScoreScreen()
+    {
+        if (ScoreManager)
+        {
+            ScoreManager.ShowScoreScreen();
         }
     }
 }
