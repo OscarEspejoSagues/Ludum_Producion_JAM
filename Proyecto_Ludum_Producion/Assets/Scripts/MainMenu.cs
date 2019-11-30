@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     private string Game = "GameScene";
     private string Tutorial = "TutorialScene";
+    private string Menu = "MainMenu";
     
     public void PlayGame()
     {
@@ -24,5 +25,10 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(Tutorial);
         //Debug.Log("TUTORIAL");
+    }
+
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene(Menu);
     }
 }

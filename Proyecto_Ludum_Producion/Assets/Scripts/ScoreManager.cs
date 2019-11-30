@@ -24,6 +24,8 @@ public class ScoreManager : MonoBehaviour
     }
     public Text ScoreNum;
 
+    public GameObject ScoreScreen;
+
     [SerializeField]
     private int _score;
 
@@ -54,5 +56,10 @@ public class ScoreManager : MonoBehaviour
     private void GetScores()
     {
 
+    }
+
+    public void ShowScoreScreen()
+    {
+        ScoreScreen.SetActive(true);
     }
 }

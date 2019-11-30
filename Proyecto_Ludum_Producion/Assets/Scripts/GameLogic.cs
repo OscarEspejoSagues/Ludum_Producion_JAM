@@ -85,6 +85,11 @@ public class GameLogic : MonoBehaviour
                 _currentLevel++;
                 _levelTimer = 0;
             }
+
+            if (PlayerController.death)
+            {
+                //Save Game
+            }
         }
     }
 
