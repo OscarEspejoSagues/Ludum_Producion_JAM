@@ -25,6 +25,8 @@ public class TutorialController : MonoBehaviour
     void Start()
     {
         TextImage.sprite = TextToShow[CurrentText];
+
+        Time.timeScale = 1f;
     }
 
 
