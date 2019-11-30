@@ -677,7 +677,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Level1Traps.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 25e83050c670f3d4db31bcf68ce05608,
+      objectReference: {fileID: 11400000, guid: cdd69d63ba45f4c4d8268662fef27fd0,
         type: 2}
     - target: {fileID: 2045828893041822871, guid: a5ee3f48fd724da489326084fe2c2aa5,
         type: 3}
