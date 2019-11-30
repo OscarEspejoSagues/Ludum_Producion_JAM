@@ -10,34 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72860462f1194be40972b9527b05c9a9, type: 3}
-  m_Name: Mix_01
+  m_Name: Laser_02
   m_EditorClassIdentifier: 
-  Description: C H A O S
-  Debuff: 0
+  Description: TAKE A CLOSER LOOK
+  Debuff: 1
   Traps:
   - TrapType: 0
     TrapPrefab: {fileID: 7636711211035600704, guid: 4d47ebb2b1572b94ba7dac860686e029,
       type: 3}
-    Speed: 5
+    Speed: -4
     NegativeX: 0
-    InitialPosition: {x: 4.5, y: 3.56}
-    InitialRotation: {x: 0, y: 0, z: 0}
-    NumberOfLasers: 15
-    MoveX: 0
-    MoveY: 1
-    NegativeY: 0
-    Rate: 0
-    GoUp: 0
-  - TrapType: 1
-    TrapPrefab: {fileID: 691935585731417271, guid: ff046029be1e9f743831cd861e0342b7,
-      type: 3}
-    Speed: 5
-    NegativeX: 1
-    InitialPosition: {x: -4.5, y: 4.29}
-    InitialRotation: {x: 0, y: 0, z: 0}
-    NumberOfLasers: 0
-    MoveX: 0
+    InitialPosition: {x: -4.3, y: -3.25}
+    InitialRotation: {x: 0, y: 0, z: -90}
+    NumberOfLasers: 7
+    MoveX: 1
     MoveY: 0
     NegativeY: 0
-    Rate: 1
+    Rate: 0
     GoUp: 0
