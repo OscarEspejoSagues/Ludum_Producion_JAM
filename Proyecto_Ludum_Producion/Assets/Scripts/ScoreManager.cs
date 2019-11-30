@@ -8,12 +8,12 @@ using UnityEngine.UI;
 public class PlayerScore
 {
     public int BestScore;
-    public int BestTime;
     public int BestSurvivedTraps;
 }
 
 public class ScoreManager : MonoBehaviour
 {
+    [Header("Score Manager")]
     public int Inc = 5;
     public int Score
     {
@@ -24,9 +24,15 @@ public class ScoreManager : MonoBehaviour
     }
     public Text ScoreNum;
 
+    [Header("Score Screen")]
     public GameObject ScoreScreen;
+    public Text YourScore;
+    public Text SurvivedTraps;
+    public Text BestScore;
+    public Text BestSurvivedTraps;
 
-    [SerializeField]
+
+    //[SerializeField]
     private int _score;
 
 
@@ -61,5 +67,11 @@ public class ScoreManager : MonoBehaviour
     public void ShowScoreScreen()
     {
         ScoreScreen.SetActive(true);
+    }
+
+    public void SetUpScoreScreen(int survivedTraps)
+    {
+        YourScore.text = _score.ToString();
+        SurvivedTraps.text = survivedTraps.ToString();
     }
 }

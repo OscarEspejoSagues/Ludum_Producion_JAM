@@ -39,6 +39,8 @@ public class GameLogic : MonoBehaviour
     private float _levelTimer;
     //[SerializeField]
     private int _currentLevel;
+    //[SerializeField]
+    private int _survivedTraps;
 
     //Start
     private void Start()
@@ -54,6 +56,8 @@ public class GameLogic : MonoBehaviour
         _levelTimer = 0f;
 
         _currentLevel = 1;
+
+        _survivedTraps = 0;
 
         FreezeGame();
     }
@@ -71,6 +75,7 @@ public class GameLogic : MonoBehaviour
             {
                 FreezeGame();
                 _newEventTimer = 0f;
+                _survivedTraps++;
             }
 
             if (_globalTimer - _scoreTimer > 1f && !PlayerController.death)
@@ -89,6 +94,7 @@ public class GameLogic : MonoBehaviour
             if (PlayerController.death)
             {
                 //Save Game
+                ScoreManager.SetUpScoreScreen(_survivedTraps);
             }
         }
     }
