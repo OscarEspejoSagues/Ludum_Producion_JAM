@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 public class PlayerDeath : MonoBehaviour
 {
     public bool Die = false;
+    public AudioSource myFx;
+    public AudioClip deathFx;
+    private float volume;
 
     private Animator m_Animator;
     private int state = 0;
@@ -16,6 +19,7 @@ public class PlayerDeath : MonoBehaviour
     void Start()
     {
         m_Animator = gameObject.GetComponent<Animator>();
+        myFx.volume = 0.1f;
     }
 
     // Update is called once per frame
@@ -26,6 +30,7 @@ public class PlayerDeath : MonoBehaviour
             switch (state)
             {
                 case 0:
+                    myFx.PlayOneShot(deathFx);
                     Time.timeScale = 0.2f;
                     state++;
                     break;

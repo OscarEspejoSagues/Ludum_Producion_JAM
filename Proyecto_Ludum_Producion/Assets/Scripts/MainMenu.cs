@@ -5,22 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    private string Game = "GameScene";
+    private string Tutorial = "TutorialScene";
     
     public void PlayGame()
     {
         //LOAD LEVEL
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(Game);
     }
 
     public void QuitGame()
     {
         Application.Quit();
-        Debug.Log("QUIT");
+        //Debug.Log("QUIT");
     }
 
     public void PlayTutorial()
     {
-        //SceneManager.LoadScene("Tutorial");
-        Debug.Log("TUTORIAL");
+        SceneManager.LoadScene(Tutorial);
+        //Debug.Log("TUTORIAL");
     }
 }

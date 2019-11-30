@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Mix_01
   m_EditorClassIdentifier: 
   Description: C H A O S
+  Debuff: 1
   Traps:
   - TrapType: 0
     TrapPrefab: {fileID: 7636711211035600704, guid: 4d47ebb2b1572b94ba7dac860686e029,

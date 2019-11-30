@@ -10,6 +10,7 @@ public class GameLogic : MonoBehaviour
     public EventUI EventUI;
     public Text Description;
     public PlayerController PlayerController;
+    public PlayerEventManagerScript PlayerEventManager;
 
     [Header("Levels")]
     public float LevelThreshold = 30f;
@@ -34,14 +35,16 @@ public class GameLogic : MonoBehaviour
     private float _newEventTimer;
     //[SerializeField]
     private float _scoreTimer;
-    [SerializeField]
+    //[SerializeField]
     private float _levelTimer;
-    [SerializeField]
+    //[SerializeField]
     private int _currentLevel;
 
     //Start
     private void Start()
     {
+        Time.timeScale = 1f;
+
         _gameFreezed = true;
         _activeTraps = new List<GameObject>();
 
@@ -88,7 +91,7 @@ public class GameLogic : MonoBehaviour
     //Freezes game
     private void FreezeGame()
     {
-        Debug.Log("game freezed");
+        //Debug.Log("game freezed");
         _gameFreezed = true;
         PlayerController.freezed = true;
 
@@ -136,6 +139,10 @@ public class GameLogic : MonoBehaviour
     //Start event. Instantiates traps
     private void StartEvent()
     {
+        //Activate Debuff
+        PlayerEventManager.CurrentEvent = _currentTrap.Debuff;
+        PlayerEventManager.enableEvent = true;
+
         //Spawn all traps
         foreach (TrapEvent trap in _currentTrap.Traps)
         {
@@ -171,6 +178,8 @@ public class GameLogic : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        PlayerEventManager.enableEvent = false;
     }
 
     //Write score in disk

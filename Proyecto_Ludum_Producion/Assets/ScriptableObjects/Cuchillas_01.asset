@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Cuchillas_01
   m_EditorClassIdentifier: 
   Description: TIME TO MAKE SOME SASHIMI
+  Debuff: 4
   Traps:
   - TrapType: 1
     TrapPrefab: {fileID: 691935585731417271, guid: ff046029be1e9f743831cd861e0342b7,
