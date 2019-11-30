@@ -67,33 +67,36 @@ public class GameLogic : MonoBehaviour
     {
         if (!_gameFreezed)
         {
-            _globalTimer += Time.deltaTime;
-            _newEventTimer += Time.deltaTime;
-            _levelTimer += Time.deltaTime;
-
-            if (_newEventTimer >= 5f)
+            if (!PlayerController.death)
             {
-                FreezeGame();
-                _newEventTimer = 0f;
-                _survivedTraps++;
-            }
+                _globalTimer += Time.deltaTime;
+                _newEventTimer += Time.deltaTime;
+                _levelTimer += Time.deltaTime;
 
-            if (_globalTimer - _scoreTimer > 1f && !PlayerController.death)
-            {
-                //Reset timer and add score
-                _scoreTimer = _globalTimer;
-                ScoreManager.AddScore();
-            }
+                if (_newEventTimer >= 5f)
+                {
+                    FreezeGame();
+                    _newEventTimer = 0f;
+                    _survivedTraps++;
+                }
 
-            if (_levelTimer >= LevelThreshold && _currentLevel < MaxLevel)
-            {
-                _currentLevel++;
-                _levelTimer = 0;
-            }
+                if (_globalTimer - _scoreTimer > 1f && !PlayerController.death)
+                {
+                    //Reset timer and add score
+                    _scoreTimer = _globalTimer;
+                    ScoreManager.AddScore();
+                }
 
-            if (PlayerController.death)
+                if (_levelTimer >= LevelThreshold && _currentLevel < MaxLevel)
+                {
+                    _currentLevel++;
+                    _levelTimer = 0;
+                }
+            }
+            else if (PlayerController.death)
             {
                 //Save Game
+                SaveData(_survivedTraps);
                 ScoreManager.SetUpScoreScreen(_survivedTraps);
             }
         }
@@ -194,10 +197,10 @@ public class GameLogic : MonoBehaviour
     }
 
     //Write score in disk
-    private void SaveScore()
+    private void SaveData(int survivedTraps)
     {
-        //Call SaveScore() in ScoreManager
-        ScoreManager.SaveScore();
+        //Call SaveData() in ScoreManager
+        ScoreManager.SaveData(survivedTraps);
     }
 
     //Start description animation

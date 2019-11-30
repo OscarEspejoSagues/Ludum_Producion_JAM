@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [System.Serializable]
-public class PlayerScore
+public class PersistentData
 {
     public int BestScore;
     public int BestSurvivedTraps;
@@ -31,14 +31,14 @@ public class ScoreManager : MonoBehaviour
     public Text BestScore;
     public Text BestSurvivedTraps;
 
-
-    //[SerializeField]
+    [SerializeField]
     private int _score;
+    private PersistentData SavedData;
 
 
     private void Start()
     {
-        
+        SavedData = new PersistentData();
     }
 
     private void Update()
@@ -52,16 +52,35 @@ public class ScoreManager : MonoBehaviour
         _score += Inc;
     }
 
-    //Save current score
-    public void SaveScore()
+    //Save data if appropiate
+    public void SaveData(int survivedTraps)
     {
-        //File.WriteAllText()
+        //Get data from file
+        GetSavedData();
+
+        //Compare saved data to current data
+        if (survivedTraps > SavedData.BestSurvivedTraps)
+            SavedData.BestSurvivedTraps = survivedTraps;
+        if (_score > SavedData.BestScore)
+            SavedData.BestScore = _score;
+
+        //Save data
+        string data = JsonUtility.ToJson(SavedData);
+        File.WriteAllText(Application.persistentDataPath + "/SavedData.txt", data);
     }
 
-    //Get all saved scores
-    private void GetScores()
+    //Get saved data
+    private void GetSavedData()
     {
-
+        if (File.Exists(Application.persistentDataPath + "/SavedData.txt"))
+        {
+            SavedData = JsonUtility.FromJson<PersistentData>(File.ReadAllText(Application.persistentDataPath + "/SavedData.txt"));
+        }
+        else
+        {
+            SavedData.BestScore = 0;
+            SavedData.BestSurvivedTraps = 0;
+        }
     }
 
     public void ShowScoreScreen()
@@ -73,5 +92,7 @@ public class ScoreManager : MonoBehaviour
     {
         YourScore.text = _score.ToString();
         SurvivedTraps.text = survivedTraps.ToString();
+        BestSurvivedTraps.text = SavedData.BestSurvivedTraps.ToString();
+        BestScore.text = SavedData.BestScore.ToString();
     }
 }
