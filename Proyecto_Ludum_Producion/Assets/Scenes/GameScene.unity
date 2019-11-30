@@ -641,17 +641,17 @@ PrefabInstance:
     - target: {fileID: 2045828893041822871, guid: a5ee3f48fd724da489326084fe2c2aa5,
         type: 3}
       propertyPath: Level1Traps.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2045828893041822871, guid: a5ee3f48fd724da489326084fe2c2aa5,
         type: 3}
       propertyPath: Level2Traps.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2045828893041822871, guid: a5ee3f48fd724da489326084fe2c2aa5,
         type: 3}
       propertyPath: Level3Traps.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2045828893041822871, guid: a5ee3f48fd724da489326084fe2c2aa5,
         type: 3}
@@ -683,13 +683,13 @@ PrefabInstance:
         type: 3}
       propertyPath: Level2Traps.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: a43e97394361913478ce78bdb69ed260,
+      objectReference: {fileID: 11400000, guid: 63a9d084c77c99d458adb0d5a4e81e10,
         type: 2}
     - target: {fileID: 2045828893041822871, guid: a5ee3f48fd724da489326084fe2c2aa5,
         type: 3}
       propertyPath: Level3Traps.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 23677422eea1400468093f3798c56c79,
+      objectReference: {fileID: 11400000, guid: 15d530b0ed4d9244aa0c350ef42fca8a,
         type: 2}
     - target: {fileID: 2045828893041822871, guid: a5ee3f48fd724da489326084fe2c2aa5,
         type: 3}
@@ -701,6 +701,42 @@ PrefabInstance:
       propertyPath: PlayerEventManager
       value: 
       objectReference: {fileID: 1018781698}
+    - target: {fileID: 2045828893041822871, guid: a5ee3f48fd724da489326084fe2c2aa5,
+        type: 3}
+      propertyPath: Level1Traps.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: a43e97394361913478ce78bdb69ed260,
+        type: 2}
+    - target: {fileID: 2045828893041822871, guid: a5ee3f48fd724da489326084fe2c2aa5,
+        type: 3}
+      propertyPath: Level1Traps.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 23677422eea1400468093f3798c56c79,
+        type: 2}
+    - target: {fileID: 2045828893041822871, guid: a5ee3f48fd724da489326084fe2c2aa5,
+        type: 3}
+      propertyPath: Level2Traps.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 25e83050c670f3d4db31bcf68ce05608,
+        type: 2}
+    - target: {fileID: 2045828893041822871, guid: a5ee3f48fd724da489326084fe2c2aa5,
+        type: 3}
+      propertyPath: Level2Traps.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: bf1853b3d65c5934aa47f362afc429fd,
+        type: 2}
+    - target: {fileID: 2045828893041822871, guid: a5ee3f48fd724da489326084fe2c2aa5,
+        type: 3}
+      propertyPath: Level3Traps.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: cdd69d63ba45f4c4d8268662fef27fd0,
+        type: 2}
+    - target: {fileID: 2045828893041822871, guid: a5ee3f48fd724da489326084fe2c2aa5,
+        type: 3}
+      propertyPath: Level3Traps.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8af45dc0399ccaf449e604803460efb5,
+        type: 2}
     - target: {fileID: 2045828893041822868, guid: a5ee3f48fd724da489326084fe2c2aa5,
         type: 3}
       propertyPath: m_LocalPosition.x
