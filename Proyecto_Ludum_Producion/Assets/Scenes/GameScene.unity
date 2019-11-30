@@ -184,7 +184,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &461850764
 PrefabInstance:
@@ -236,7 +236,7 @@ PrefabInstance:
     - target: {fileID: 656172587891718722, guid: 5928f42ae6f7ec5488da8d7beff73435,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 656172587891718722, guid: 5928f42ae6f7ec5488da8d7beff73435,
         type: 3}
@@ -321,7 +321,7 @@ PrefabInstance:
     - target: {fileID: 2059688255133749640, guid: 19a6eace938dfaa4e88215c8db97cdab,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2059688255133749640, guid: 19a6eace938dfaa4e88215c8db97cdab,
         type: 3}
@@ -677,7 +677,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Level1Traps.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 15d530b0ed4d9244aa0c350ef42fca8a,
+      objectReference: {fileID: 11400000, guid: bf1853b3d65c5934aa47f362afc429fd,
         type: 2}
     - target: {fileID: 2045828893041822871, guid: a5ee3f48fd724da489326084fe2c2aa5,
         type: 3}
