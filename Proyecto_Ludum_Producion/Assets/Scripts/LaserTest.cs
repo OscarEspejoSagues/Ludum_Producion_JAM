@@ -22,20 +22,24 @@ public class LaserTest : MonoBehaviour
 
     private void Update()
     {
-        if (_hit.collider != null && _hit.transform.gameObject.tag == "Wall")
+        if (_hit.collider != null)
         {
-            transform.localScale = new Vector3(1f, Vector2.Distance(_hit.point, transform.position) / SpriteRend.size.y, 1f);
+            if (_hit.transform.gameObject.tag == "Wall")
+            {
+                transform.localScale = new Vector3(1f, Vector2.Distance(_hit.point, transform.position) / SpriteRend.size.y, 1f);
 
-            LaserParticles.SetActive(true);
-            LaserParticles.transform.position = _hit.point;
-        }
-        else
-        {
+                LaserParticles.SetActive(true);
+                LaserParticles.transform.position = _hit.point;
+            }
+
             if (_hit.transform.gameObject.tag == "Player")
             {
                 _hit.transform.GetComponent<PlayerDeath>().Die = true;
+                LaserParticles.SetActive(true);
             }
-
+        }
+        else
+        {
             transform.localScale = new Vector3(1f, LaserLength, 1f);
             LaserParticles.SetActive(false);
         }

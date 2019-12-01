@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: Laser_01
   m_EditorClassIdentifier: 
   Description: READY FOR YOUR EYE SURGERY?
-  Debuff: 5
+  Debuff: 0
   Traps:
   - TrapType: 0
     TrapPrefab: {fileID: 7636711211035600704, guid: 4d47ebb2b1572b94ba7dac860686e029,
       type: 3}
     Speed: 5
     NegativeX: 0
-    InitialPosition: {x: 6.98, y: 3.56}
+    InitialPosition: {x: 4.15, y: 2.76}
     InitialRotation: {x: 0, y: 0, z: 0}
-    NumberOfLasers: 10
+    LaserLength: 10
     MoveX: 0
     MoveY: 1
     NegativeY: 0
@@ -33,9 +33,9 @@ MonoBehaviour:
       type: 3}
     Speed: 4
     NegativeX: 0
-    InitialPosition: {x: 4.89, y: -3.72}
+    InitialPosition: {x: 4.89, y: -2.96}
     InitialRotation: {x: 0, y: 0, z: -90}
-    NumberOfLasers: 10
+    LaserLength: 10
     MoveX: 1
     MoveY: 0
     NegativeY: 0

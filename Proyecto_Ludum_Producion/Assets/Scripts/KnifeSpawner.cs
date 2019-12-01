@@ -12,6 +12,7 @@ public class KnifeSpawner : MonoBehaviour
     public bool GoUp = false;
 
     public GameObject Knife;
+    public Transform KnifeSpawnTransform;
 
     private float nextActionTime = 0.0f;
 
@@ -56,7 +57,7 @@ public class KnifeSpawner : MonoBehaviour
         if (globalTimer > nextActionTime)
         {
             nextActionTime += Rate;
-            GameObject knife = Instantiate(Knife, transform.position, transform.rotation, transform);
+            GameObject knife = Instantiate(Knife, KnifeSpawnTransform.position, transform.rotation, transform);
             if (!GoUp)
             {
                 knife.transform.GetChild(0).GetComponent<KnifeLogic>().MoveUp = true;

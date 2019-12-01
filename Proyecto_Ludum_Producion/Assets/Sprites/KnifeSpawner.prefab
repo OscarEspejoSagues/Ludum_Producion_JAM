@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 691935584621287501}
   m_Layer: 0
-  m_Name: Logic
+  m_Name: SpawnPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 691935584621287500}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.632, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 691935585731417268}
@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 691935585731417271}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.8, y: 3.14, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 691935584621287501}
@@ -80,6 +80,7 @@ MonoBehaviour:
   NegativeX: 0
   GoUp: 0
   Knife: {fileID: 1949526970984830719, guid: f1bf284ec3b4cf04bb026c675530e8c9, type: 3}
+  KnifeSpawnTransform: {fileID: 691935584621287501}
 --- !u!1 &691935585903036793
 GameObject:
   m_ObjectHideFlags: 0
