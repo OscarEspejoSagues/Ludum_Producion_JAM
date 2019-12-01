@@ -7,6 +7,8 @@ public class KnifeLogic : MonoBehaviour
     public float Speed = 5.0f;
     public bool MoveUp = false;
 
+    public GameObject Particles;
+
     private Vector2 parentPosition;
 
     
@@ -41,6 +43,11 @@ public class KnifeLogic : MonoBehaviour
         if (collision.tag == "Player")
         {
             collision.GetComponent<PlayerDeath>().Die = true;
+        }
+        else if(collision.tag == "Wall")
+        {
+            Instantiate(Particles, transform.position, transform.rotation, transform.parent.parent);
+            Destroy(transform.parent.gameObject);
         }
     }
 

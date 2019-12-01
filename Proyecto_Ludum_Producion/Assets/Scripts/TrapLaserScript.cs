@@ -6,7 +6,7 @@ public class TrapLaserScript : MonoBehaviour
 {
 
     public SpriteRenderer mySprite;
-    public int NumberOfLasers;
+    public int LaserLength;
     public GameObject myLaserPrefab;
 
     public float Speed;
@@ -27,22 +27,25 @@ public class TrapLaserScript : MonoBehaviour
     public void InstanceLasers()
     {
         GameObject lastLaser = null;
-        GameObject aux = null;
-        for (int i = 0; i <= NumberOfLasers; i++)
-        {
-            if (aux == null)
-            {
-                lastLaser = Instantiate(myLaserPrefab, transform.position, transform.rotation);
-                lastLaser.transform.SetParent(transform);
-                aux = lastLaser;
-            }
-            else
-            {
-                lastLaser = Instantiate(myLaserPrefab, aux.transform.GetChild(2).position, aux.transform.GetChild(2).rotation);
-                lastLaser.transform.SetParent(transform);
-                aux = lastLaser;
-            }
-        }
+        //GameObject aux = null;
+        //for (int i = 0; i <= NumberOfLasers; i++)
+        //{
+        //    if (aux == null)
+        //    {
+        //        lastLaser = Instantiate(myLaserPrefab, transform.position, transform.rotation);
+        //        lastLaser.transform.SetParent(transform);
+        //        aux = lastLaser;
+        //    }
+        //    else
+        //    {
+        //        lastLaser = Instantiate(myLaserPrefab, aux.transform.GetChild(2).position, aux.transform.GetChild(2).rotation);
+        //        lastLaser.transform.SetParent(transform);
+        //        aux = lastLaser;
+        //    }
+        //}
+
+        lastLaser = Instantiate(myLaserPrefab, transform.position, myLaserPrefab.transform.rotation*transform.rotation, transform);
+        lastLaser.GetComponent<LaserTest>().SetLaserLength(LaserLength);
         state++;
     }
 
@@ -101,9 +104,9 @@ public class TrapLaserScript : MonoBehaviour
         }
     }
 
-    public void InitializeTrap(int lasersNum, float speed, bool moveX, bool negativeX, bool moveY, bool negativeY)
+    public void InitializeTrap(int laserLength, float speed, bool moveX, bool negativeX, bool moveY, bool negativeY)
     {
-        NumberOfLasers = lasersNum;
+        LaserLength = laserLength;
 
         Speed = speed;
         MoveX = moveX;

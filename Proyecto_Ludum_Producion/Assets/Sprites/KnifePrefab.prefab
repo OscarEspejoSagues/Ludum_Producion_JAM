@@ -72,6 +72,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 0.1
   MoveUp: 0
+  Particles: {fileID: 5101076662794890857, guid: 8692d02c517367f4090559d63025e275,
+    type: 3}
 --- !u!1 &1949526970552720416
 GameObject:
   m_ObjectHideFlags: 0
