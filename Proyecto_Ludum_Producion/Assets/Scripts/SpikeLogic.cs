@@ -22,6 +22,14 @@ public class SpikeLogic : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter2D(Collider2D collision) //trigger to kill Player
+    {
+        if (collision.tag == "Player")
+        {
+            collision.GetComponent<PlayerDeath>().Die = true;
+        }
+    }
+
     public void Movement()
     {
         //he acabado copiando el movimiento de alex para no liarla mas
