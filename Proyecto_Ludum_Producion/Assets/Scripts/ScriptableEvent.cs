@@ -33,7 +33,7 @@ public class TrapEvent
     public Vector3 InitialRotation;
 
     [Header("Laser")]
-    public int NumberOfLasers = 10;
+    public int LaserLength = 10;
     public bool MoveX = false;
     public bool MoveY = false;
     public bool NegativeY = false;

@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 7636711210683696971}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7636711211035600705}
   m_RootOrder: 1
@@ -135,7 +135,7 @@ Transform:
   m_GameObject: {fileID: 7636711211035600704}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7636711210770732208}
   - {fileID: 7636711210683696968}
@@ -155,8 +155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mySprite: {fileID: 7636711210683696966}
-  NumberOfLasers: 10
-  myLaserPrefab: {fileID: 2830515914337640368, guid: 1faf10c34f00a4f458f62059f1f0e62d,
+  LaserLength: 20
+  myLaserPrefab: {fileID: 6645798279935228376, guid: 3938703fa14e01f4d82dc0c482e201c6,
     type: 3}
   Speed: 5
   MoveX: 1

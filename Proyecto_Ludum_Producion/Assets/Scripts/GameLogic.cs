@@ -165,7 +165,7 @@ public class GameLogic : MonoBehaviour
             switch (trap.TrapType)
             {
                 case TrapType.LASER:
-                    newTrap.GetComponent<TrapLaserScript>().InitializeTrap(trap.NumberOfLasers, trap.Speed, trap.MoveX, trap.NegativeX, trap.MoveY, trap.NegativeY);
+                    newTrap.GetComponent<TrapLaserScript>().InitializeTrap(trap.LaserLength, trap.Speed, trap.MoveX, trap.NegativeX, trap.MoveY, trap.NegativeY);
                     break;
 
                 case TrapType.KNIFES:
