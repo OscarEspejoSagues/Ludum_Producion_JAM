@@ -42,6 +42,8 @@ public class GameLogic : MonoBehaviour
     //[SerializeField]
     private int _survivedTraps;
 
+    private int _lastRand;
+
     //Start
     private void Start()
     {
@@ -58,6 +60,8 @@ public class GameLogic : MonoBehaviour
         _currentLevel = 1;
 
         _survivedTraps = 0;
+
+        _lastRand = -1;
 
         FreezeGame();
     }
@@ -135,17 +139,44 @@ public class GameLogic : MonoBehaviour
         {
             case 1:
                 rand = Random.Range(0, Level1Traps.Count);
+                if (_lastRand != -1)
+                {
+                    while (rand == _lastRand)
+                    {
+                        rand = Random.Range(0, Level1Traps.Count);
+                    }
+                }
+
                 _currentTrap = Level1Traps[rand];
+                _lastRand = rand;
                 break;
 
             case 2:
                 rand = Random.Range(0, Level2Traps.Count);
+                if (_lastRand != -1)
+                {
+                    while (rand == _lastRand)
+                    {
+                        rand = Random.Range(0, Level2Traps.Count);
+                    }
+                }
+
                 _currentTrap = Level2Traps[rand];
+                _lastRand = rand;
                 break;
 
             case 3:
                 rand = Random.Range(0, Level3Traps.Count);
+                if (_lastRand != -1)
+                {
+                    while (rand == _lastRand)
+                    {
+                        rand = Random.Range(0, Level3Traps.Count);
+                    }
+                }
+
                 _currentTrap = Level3Traps[rand];
+                _lastRand = rand;
                 break;
         }
     }
