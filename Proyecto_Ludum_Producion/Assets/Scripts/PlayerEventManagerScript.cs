@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum events { NONE, ZOOMIN, SPEEDDEBUFF, SPEEDBUFF, BLUR, FOW};
+public enum events { NONE, ZOOMIN, SPEEDDEBUFF, SPEEDBUFF, BLUR, FOW, INVERTCONTROLS};
 
 public class PlayerEventManagerScript : MonoBehaviour
 {
@@ -49,6 +49,8 @@ public class PlayerEventManagerScript : MonoBehaviour
             transform.parent.GetComponent<PlayerController>().speed = defaultSpeed;
             _camera.position = new Vector3(0f, 0f, -10f);
 
+            transform.parent.GetComponent<PlayerController>().invertControls = false;
+
             FOWDebuff.SetActive(false);
             BlurDebuff.SetActive(false);
         }
@@ -91,12 +93,16 @@ public class PlayerEventManagerScript : MonoBehaviour
             case events.FOW:
                 FOWDebuff.SetActive(true);
                 break;
-
+            case events.INVERTCONTROLS:
+                transform.parent.GetComponent<PlayerController>().invertControls = true;
+                break;
             case events.NONE:
                 targetOrtho += zoomSpeed;
                 targetOrtho = Mathf.Clamp(targetOrtho, minOrtho, maxOrtho);
                 transform.parent.GetComponent<PlayerController>().speed = defaultSpeed;
                 _camera.position = new Vector3(0f, 0f, -10f);
+
+                transform.parent.GetComponent<PlayerController>().invertControls = false;
 
                 FOWDebuff.SetActive(false);
                 BlurDebuff.SetActive(false);
