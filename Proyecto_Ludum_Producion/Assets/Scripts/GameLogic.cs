@@ -224,6 +224,8 @@ public class GameLogic : MonoBehaviour
             Destroy(gameObject);
         }
 
+        PlayerController.transform.position = Vector3.zero;
+
         PlayerEventManager.enableEvent = false;
     }
 
