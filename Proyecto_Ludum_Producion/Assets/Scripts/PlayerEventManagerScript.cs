@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum events { NONE, ZOOMIN, SPEEDDEBUFF, SPEEDBUFF, BLUR, FOW};
+public enum events { NONE, ZOOMIN, SPEEDDEBUFF, SPEEDBUFF, BLUR, FOW, INVERTCONTROLS};
 
 public class PlayerEventManagerScript : MonoBehaviour
 {
@@ -91,7 +91,8 @@ public class PlayerEventManagerScript : MonoBehaviour
             case events.FOW:
                 FOWDebuff.SetActive(true);
                 break;
-
+            case events.INVERTCONTROLS:
+                break;
             case events.NONE:
                 targetOrtho += zoomSpeed;
                 targetOrtho = Mathf.Clamp(targetOrtho, minOrtho, maxOrtho);
