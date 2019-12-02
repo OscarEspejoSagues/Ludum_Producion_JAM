@@ -20,9 +20,9 @@ MonoBehaviour:
       type: 3}
     Speed: 5
     NegativeX: 1
-    InitialPosition: {x: -4.5, y: 4.29}
+    InitialPosition: {x: -4.5, y: 3.8}
     InitialRotation: {x: 0, y: 0, z: 0}
-    NumberOfLasers: 0
+    LaserLength: 10
     MoveX: 0
     MoveY: 0
     NegativeY: 0
@@ -33,9 +33,9 @@ MonoBehaviour:
       type: 3}
     Speed: 5
     NegativeX: 0
-    InitialPosition: {x: 4.5, y: -4.29}
-    InitialRotation: {x: 0, y: 0, z: 180}
-    NumberOfLasers: 0
+    InitialPosition: {x: 4.5, y: -3.8}
+    InitialRotation: {x: 0, y: 0, z: 0}
+    LaserLength: 10
     MoveX: 0
     MoveY: 0
     NegativeY: 0

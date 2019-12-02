@@ -33,7 +33,7 @@ MonoBehaviour:
       type: 3}
     Speed: 5
     NegativeX: 1
-    InitialPosition: {x: -4.5, y: 4.29}
+    InitialPosition: {x: -4.5, y: 3.8}
     InitialRotation: {x: 0, y: 0, z: 0}
     LaserLength: 5
     MoveX: 0
