@@ -22,7 +22,7 @@ MonoBehaviour:
     NegativeX: 0
     InitialPosition: {x: -4.3, y: -3.25}
     InitialRotation: {x: 0, y: 0, z: -90}
-    NumberOfLasers: 7
+    LaserLength: 6
     MoveX: 1
     MoveY: 0
     NegativeY: 0
