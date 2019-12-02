@@ -905,7 +905,7 @@ PrefabInstance:
     - target: {fileID: 2045828893041822871, guid: a5ee3f48fd724da489326084fe2c2aa5,
         type: 3}
       propertyPath: LevelThreshold
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2045828893041822871, guid: a5ee3f48fd724da489326084fe2c2aa5,
         type: 3}

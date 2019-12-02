@@ -22,12 +22,13 @@ MonoBehaviour:
     NegativeX: 0
     InitialPosition: {x: 4.5, y: 4}
     InitialRotation: {x: 0, y: 0, z: 0}
-    LaserLength: 6
+    LaserLength: 4
     MoveX: 0
     MoveY: 1
     NegativeY: 0
     Rate: 0
     GoUp: 0
+    RotationSpeed: 0
   - TrapType: 0
     TrapPrefab: {fileID: 7636711211035600704, guid: 4d47ebb2b1572b94ba7dac860686e029,
       type: 3}
@@ -35,9 +36,10 @@ MonoBehaviour:
     NegativeX: 0
     InitialPosition: {x: -4.5, y: -4}
     InitialRotation: {x: 0, y: 0, z: 180}
-    LaserLength: 10
+    LaserLength: 5
     MoveX: 0
     MoveY: 1
     NegativeY: 0
     Rate: 0
     GoUp: 0
+    RotationSpeed: 0

@@ -28,16 +28,18 @@ MonoBehaviour:
     NegativeY: 0
     Rate: 0.6
     GoUp: 0
+    RotationSpeed: 0
   - TrapType: 1
     TrapPrefab: {fileID: 691935585731417271, guid: ff046029be1e9f743831cd861e0342b7,
       type: 3}
     Speed: 5
     NegativeX: 0
-    InitialPosition: {x: 4.5, y: -3.8}
-    InitialRotation: {x: 0, y: 0, z: 0}
+    InitialPosition: {x: 4.5, y: -3.3}
+    InitialRotation: {x: 0, y: 0, z: 180}
     LaserLength: 10
     MoveX: 0
     MoveY: 0
     NegativeY: 0
     Rate: 0.6
     GoUp: 1
+    RotationSpeed: 0
