@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72860462f1194be40972b9527b05c9a9, type: 3}
+  m_Name: Mix_04
+  m_EditorClassIdentifier: 
+  Description: TOO MUCH VODKA
+  Debuff: 4
+  Traps:
+  - TrapType: 3
+    TrapPrefab: {fileID: 4495636804975803700, guid: c700797e4047095419c89aaa05c78d36,
+      type: 3}
+    Speed: 2
+    NegativeX: 0
+    InitialPosition: {x: 4, y: 0}
+    InitialRotation: {x: 0, y: 0, z: 0}
+    LaserLength: 0
+    MoveX: 0
+    MoveY: 0
+    NegativeY: 0
+    Rate: 0
+    GoUp: 0
+    RotationSpeed: 40
+  - TrapType: 1
+    TrapPrefab: {fileID: 691935585731417271, guid: ff046029be1e9f743831cd861e0342b7,
+      type: 3}
+    Speed: 2
+    NegativeX: 0
+    InitialPosition: {x: 3.8, y: 3.8}
+    InitialRotation: {x: 0, y: 0, z: 0}
+    LaserLength: 0
+    MoveX: 0
+    MoveY: 0
+    NegativeY: 0
+    Rate: 0.4
+    GoUp: 0
+    RotationSpeed: 40
+  - TrapType: 1
+    TrapPrefab: {fileID: 691935585731417271, guid: ff046029be1e9f743831cd861e0342b7,
+      type: 3}
+    Speed: 2
+    NegativeX: 0
+    InitialPosition: {x: -1, y: -3.8}
+    InitialRotation: {x: 0, y: 0, z: 180}
+    LaserLength: 0
+    MoveX: 0
+    MoveY: 0
+    NegativeY: 0
+    Rate: 0.4
+    GoUp: 1
+    RotationSpeed: 40

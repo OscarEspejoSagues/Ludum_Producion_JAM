@@ -204,7 +204,7 @@ public class GameLogic : MonoBehaviour
                     break;
 
                 case TrapType.SPIKES:
-                    //To do
+                    newTrap.GetComponent<SpikeLogic>().InitializeTrap((int)trap.Rate, trap.NegativeX, trap.Speed);
                     break;
             }
 
