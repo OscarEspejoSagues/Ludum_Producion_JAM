@@ -271,6 +271,7 @@ MonoBehaviour:
   Die: 0
   myFx: {fileID: 1875532050}
   deathFx: {fileID: 8300000, guid: f2457d3660f26cc449f222dc30542828, type: 3}
+  ScoreManager: {fileID: 0}
 --- !u!1 &4019874000868754209
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,7 +326,8 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: 0}
   debuffSpeed: 5
   buffSpeed: 20
-  BlurDebuff: {fileID: 0}
+  BlurDebuff: {fileID: 7473171567518663956, guid: 59591a7728e09324fa20b2a9e2ddd04e,
+    type: 3}
   FOWDebuff: {fileID: 5688750931516175090}
 --- !u!1 &5688750931516175090
 GameObject:
