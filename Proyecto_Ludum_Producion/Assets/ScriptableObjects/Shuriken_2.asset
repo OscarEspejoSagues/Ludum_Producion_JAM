@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Shuriken_2
   m_EditorClassIdentifier: 
   Description: CRUNCH TIME!
-  Debuff: 2
+  Debuff: 6
   Traps:
   - TrapType: 3
     TrapPrefab: {fileID: 4495636804975803700, guid: c700797e4047095419c89aaa05c78d36,
