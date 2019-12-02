@@ -198,6 +198,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f7fbfa88caacb4196f788b81c4e2a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &145719740 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 656172587891718783, guid: 5928f42ae6f7ec5488da8d7beff73435,
+    type: 3}
+  m_PrefabInstance: {fileID: 461850764}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &145719748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145719740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2088f9aa9b1b544094a9af8a72b8faa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &260361543 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6155247778743750197, guid: b2b4184dc09b82d42b894923b4332348,
@@ -289,6 +307,10 @@ PrefabInstance:
       propertyPath: ScoreManager
       value: 
       objectReference: {fileID: 119997184}
+    - target: {fileID: 1875532049, guid: 5928f42ae6f7ec5488da8d7beff73435, type: 3}
+      propertyPath: camTransform
+      value: 
+      objectReference: {fileID: 1559014884}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5928f42ae6f7ec5488da8d7beff73435, type: 3}
 --- !u!1 &643769275 stripped
@@ -809,7 +831,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 461850764}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 145719740}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1958e0e7cdea1d498c49ac49d04ba79, type: 3}

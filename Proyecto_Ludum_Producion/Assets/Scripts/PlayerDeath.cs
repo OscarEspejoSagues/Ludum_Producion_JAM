@@ -16,6 +16,8 @@ public class PlayerDeath : MonoBehaviour
     private int state = 0;
 
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +35,7 @@ public class PlayerDeath : MonoBehaviour
                 case 0:
                     myFx.PlayOneShot(deathFx);
                     Time.timeScale = 0.2f;
+                    transform.GetComponent<CameraShake>().Shake(0.25f,0.5f);
                     state++;
                     break;
 
@@ -54,6 +57,7 @@ public class PlayerDeath : MonoBehaviour
         if (ScoreManager)
         {
             ScoreManager.ShowScoreScreen();
+            transform.GetComponent<CameraShake>().StopShake();
         }
     }
 }
