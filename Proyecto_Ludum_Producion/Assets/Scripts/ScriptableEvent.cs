@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum TrapType { LASER, KNIFES, SPIKES};
+public enum TrapType { LASER, KNIFES, SPIKES, SHURIKEN};
 
 [CreateAssetMenu(menuName = "ScriptableObjects/Events", order = 1)]
 public class ScriptableEvent : ScriptableObject
@@ -41,6 +41,10 @@ public class TrapEvent
     [Header("Cuchillas")]
     public float Rate;
     public bool GoUp = false;
+
+    [Header("Shuriken")]
+    public int RotationSpeed;
+ 
 
     //[Header("Pinchos")]
 

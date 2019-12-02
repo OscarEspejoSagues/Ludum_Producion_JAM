@@ -53,4 +53,11 @@ public class SpikeLogic : MonoBehaviour
         Movement();
         MySprite.transform.Rotate(0, 0, 50 * Time.deltaTime * RotationSpeed);
     }
+
+    public void InitializeTrap(int rotationspeed, bool negativeX,float speed)
+    {
+      RotationSpeed = rotationspeed;
+      NegativeX = negativeX;
+      Speed = speed;
+}
 }
