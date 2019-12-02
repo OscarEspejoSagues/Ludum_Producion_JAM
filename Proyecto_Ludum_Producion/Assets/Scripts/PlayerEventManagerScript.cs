@@ -49,6 +49,8 @@ public class PlayerEventManagerScript : MonoBehaviour
             transform.parent.GetComponent<PlayerController>().speed = defaultSpeed;
             _camera.position = new Vector3(0f, 0f, -10f);
 
+            transform.parent.GetComponent<PlayerController>().invertControls = false;
+
             FOWDebuff.SetActive(false);
             BlurDebuff.SetActive(false);
         }
@@ -92,12 +94,15 @@ public class PlayerEventManagerScript : MonoBehaviour
                 FOWDebuff.SetActive(true);
                 break;
             case events.INVERTCONTROLS:
+                transform.parent.GetComponent<PlayerController>().invertControls = true;
                 break;
             case events.NONE:
                 targetOrtho += zoomSpeed;
                 targetOrtho = Mathf.Clamp(targetOrtho, minOrtho, maxOrtho);
                 transform.parent.GetComponent<PlayerController>().speed = defaultSpeed;
                 _camera.position = new Vector3(0f, 0f, -10f);
+
+                transform.parent.GetComponent<PlayerController>().invertControls = false;
 
                 FOWDebuff.SetActive(false);
                 BlurDebuff.SetActive(false);
