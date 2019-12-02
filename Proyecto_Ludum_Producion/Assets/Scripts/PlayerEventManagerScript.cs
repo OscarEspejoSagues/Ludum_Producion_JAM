@@ -47,6 +47,7 @@ public class PlayerEventManagerScript : MonoBehaviour
             targetOrtho += zoomSpeed;
             targetOrtho = Mathf.Clamp(targetOrtho, minOrtho, maxOrtho);
             transform.parent.GetComponent<PlayerController>().speed = defaultSpeed;
+            _camera.position = new Vector3(0f, 0f, -10f);
 
             FOWDebuff.SetActive(false);
             BlurDebuff.SetActive(false);
@@ -92,6 +93,13 @@ public class PlayerEventManagerScript : MonoBehaviour
                 break;
 
             case events.NONE:
+                targetOrtho += zoomSpeed;
+                targetOrtho = Mathf.Clamp(targetOrtho, minOrtho, maxOrtho);
+                transform.parent.GetComponent<PlayerController>().speed = defaultSpeed;
+                _camera.position = new Vector3(0f, 0f, -10f);
+
+                FOWDebuff.SetActive(false);
+                BlurDebuff.SetActive(false);
                 break;
         }
     }
