@@ -33,9 +33,9 @@ public class PlayerController : MonoBehaviour
             movement.y = Input.GetAxis("Vertical");
             speed = defaultSpeed;
         }
-        else if (freezed)
+        else if (freezed || death)
         {
-            speed = 0f;
+            movement = Vector3.zero;
         }
         else if (invertControls)
         {

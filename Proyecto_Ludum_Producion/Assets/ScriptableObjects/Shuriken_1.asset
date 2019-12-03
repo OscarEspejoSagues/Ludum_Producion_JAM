@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72860462f1194be40972b9527b05c9a9, type: 3}
   m_Name: Shuriken_1
   m_EditorClassIdentifier: 
-  Description: BLIND NIJAS!
+  Description: BLIND NINJAS!
   Debuff: 4
   Traps:
   - TrapType: 3
