@@ -11,6 +11,7 @@ public class GameLogic : MonoBehaviour
     public Text Description;
     public PlayerController PlayerController;
     public PlayerEventManagerScript PlayerEventManager;
+    public List<ParticleSystem> Particles;
 
     [Header("Levels")]
     public float LevelThreshold = 30f;
@@ -77,11 +78,17 @@ public class GameLogic : MonoBehaviour
                 _newEventTimer += Time.deltaTime;
                 _levelTimer += Time.deltaTime;
 
-                if (_newEventTimer >= 5f)
+                if (_newEventTimer >= EventTime)
                 {
                     FreezeGame();
                     _newEventTimer = 0f;
                     _survivedTraps++;
+
+                    //Play particle systems
+                    foreach(ParticleSystem sys in Particles)
+                    {
+                        sys.Play();
+                    }
                 }
 
                 if (_globalTimer - _scoreTimer > 1f && !PlayerController.death)
