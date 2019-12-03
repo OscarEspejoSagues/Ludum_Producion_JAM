@@ -639,8 +639,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -50}
-  m_SizeDelta: {x: 233.1, y: 83}
+  m_AnchoredPosition: {x: 0.18001, y: -52.5}
+  m_SizeDelta: {x: 132.74, y: 59.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &461347383
 MonoBehaviour:
@@ -1017,8 +1017,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.00000071526, y: -41.100006}
-  m_SizeDelta: {x: 168, y: 82.2}
+  m_AnchoredPosition: {x: -0.55, y: -47.9}
+  m_SizeDelta: {x: 91.49, y: 58.59}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &566591385
 MonoBehaviour:
@@ -1729,8 +1729,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -111}
-  m_SizeDelta: {x: 160.1, y: 81.8}
+  m_AnchoredPosition: {x: -0.82501, y: -110.84}
+  m_SizeDelta: {x: 92.04, y: 57.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &720003896
 MonoBehaviour:
@@ -2337,8 +2337,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 73}
-  m_SizeDelta: {x: 228, y: 81.1}
+  m_AnchoredPosition: {x: 0.18001, y: 63.96}
+  m_SizeDelta: {x: 159.74, y: 57.49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &884575581
 MonoBehaviour:
@@ -2833,6 +2833,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1226690211}
   - component: {fileID: 1226690212}
+  - component: {fileID: 1226690213}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -2908,12 +2909,25 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1226690213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226690210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b1fcb08b23477e48a1060c675cbfe9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sliderVolume: {fileID: 1226690212}
 --- !u!1 &1234462160
 GameObject:
   m_ObjectHideFlags: 0
@@ -3664,8 +3678,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 12.599999}
-  m_SizeDelta: {x: 245.2, y: 82.2}
+  m_AnchoredPosition: {x: -0.55, y: 6.11}
+  m_SizeDelta: {x: 135.04, y: 58.21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1516075314
 MonoBehaviour:
@@ -4239,7 +4253,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: carlitoshacker (8-Bits music)
+  m_Text: OmegaPC777 (Pixeled)
 --- !u!222 &1616179490
 CanvasRenderer:
   m_ObjectHideFlags: 0
