@@ -102,6 +102,9 @@ public class GameLogic : MonoBehaviour
                 //Save Game
                 SaveData(_survivedTraps);
                 ScoreManager.SetUpScoreScreen(_survivedTraps);
+
+                //Finish last event
+                FinishEvent();
             }
         }
     }
