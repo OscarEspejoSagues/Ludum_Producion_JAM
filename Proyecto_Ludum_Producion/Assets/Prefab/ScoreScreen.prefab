@@ -1537,7 +1537,15 @@ MonoBehaviour:
   Inc: 5
   ScoreNum: {fileID: 0}
   ScoreScreen: {fileID: 6155247778743750197}
+  YourScore: {fileID: 0}
+  SurvivedTraps: {fileID: 0}
+  BestScore: {fileID: 0}
+  BestSurvivedTraps: {fileID: 0}
   _score: 0
+  Traps:
+  - {fileID: 1949526970984830719, guid: f1bf284ec3b4cf04bb026c675530e8c9, type: 3}
+  - {fileID: 7636711211035600704, guid: 4d47ebb2b1572b94ba7dac860686e029, type: 3}
+  - {fileID: 4495636804975803700, guid: c700797e4047095419c89aaa05c78d36, type: 3}
 --- !u!1 &6160301285596672096
 GameObject:
   m_ObjectHideFlags: 0
